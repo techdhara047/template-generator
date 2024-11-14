@@ -10,10 +10,13 @@ const Template = () => {
   const [width, setWidth] = useState(null);
 
   const handleHeight = (height) => {
-    !height ?setHeight('auto'): setHeight(height+"px");
+    console.log(height);
+    
+    !height ?setHeight('fit-content'): setHeight(height+"px");
    
   }
   const handleWidth = (width) => {
+
     !width ?setWidth('fit-content'): setWidth(width+"px");
 
   }
@@ -38,13 +41,14 @@ const Template = () => {
       
       {file && (
         
-         <div className="template"  style={{
-            height,
-            width
-        }}>
+         <div className="template"  >
          <img
             src={file}
             alt="Uploaded"
+            style={{
+              height,
+              width
+          }}
            
            
           />
