@@ -52,7 +52,7 @@ const Template = () => {
     <div className="box">
     
       <div className="inputs">   
-        <h1>Template Page</h1>
+       
         <div className="form-input">
                 <label htmlFor="">Width: </label>
                 <input type="text" placeholder='Width' onChange={(e)=> handleWidth(e.target.value)}/>
