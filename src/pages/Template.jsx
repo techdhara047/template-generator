@@ -10,17 +10,11 @@ const Template = () => {
   const [width, setWidth] = useState(null);
 
   const handleHeight = (height) => {
-    if(height){
-        setHeight(height+"px");
-    }
-
-
+    !height ?setHeight('auto'): setHeight(height+"px");
+   
   }
   const handleWidth = (width) => {
-    if(width){
-        setWidth(width+"px");
-    }
-
+    !width ?setWidth('fit-content'): setWidth(width+"px");
 
   }
   
