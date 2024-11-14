@@ -1,5 +1,5 @@
 .box {
-    max-width: 500px;
+     
     margin: 0 auto;
     padding: 20px;
    
@@ -7,12 +7,21 @@
     
   }
   
+  .inputs {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+
+  }
 .template {
     width: fit-content;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 2rem;
     background-color: white;
     background-color: black;
+    margin: 0 auto;
    
 }
 .template p {

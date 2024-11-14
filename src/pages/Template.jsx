@@ -27,15 +27,16 @@ const Template = () => {
 
   return (
     <div className="box">
-      <h1>Template Page</h1>
-      <div className="inputs">
+    
+      <div className="inputs">   
+        <h1>Template Page</h1>
         <div className="form-input">
-<label htmlFor="">Height: </label>
-<input type="text" placeholder='Height' onChange={(e)=> handleHeight(e.target.value)}/>
+            <label htmlFor="">Height: </label>
+            <input type="text" placeholder='Height' onChange={(e)=> handleHeight(e.target.value)}/>
         </div>
         <div className="form-input">
-<label htmlFor="">Width: </label>
-<input type="text" placeholder='Width' onChange={(e)=> handleWidth(e.target.value)}/>
+                <label htmlFor="">Width: </label>
+                <input type="text" placeholder='Width' onChange={(e)=> handleWidth(e.target.value)}/>
         </div>
       
      
@@ -53,7 +54,7 @@ const Template = () => {
            
            
           />
-           <p><strong>Text:</strong> {text}</p>
+           <p>{text}</p>
         </div>
        
       )}
