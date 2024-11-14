@@ -11,6 +11,7 @@ const Template = () => {
  
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
+  const [fontSize, setFontSize] = useState(16);
   const [fileName, setFileName] = useState('1');
 
   const handleHeight = (height) => {
@@ -22,6 +23,14 @@ const Template = () => {
   const handleWidth = (width) => {
 
     !width ?setWidth('fit-content'): setWidth(width+"px");
+
+  }
+  const handleFontSize = (size) => {
+   if( size > 50) {
+    setFontSize(16)
+   }else {
+    setFontSize(size)
+   }
 
   }
   
@@ -52,6 +61,10 @@ const Template = () => {
             <label htmlFor="">Height: </label>
             <input type="text" placeholder='Height' onChange={(e)=> handleHeight(e.target.value)}/>
         </div>
+        <div className="form-input">
+            <label htmlFor="">Text Size: </label>
+            <input type="number" max="50" value={fontSize} onChange={(e)=> handleFontSize(e.target.value)}/>
+        </div>
         
       
      
@@ -69,7 +82,7 @@ const Template = () => {
              width
          }}
          />
-          <p>{text}</p>
+          <p style={{fontSize: fontSize+"px"}}>{text}</p>
        </div>
       
      )}
