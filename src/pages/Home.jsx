@@ -17,6 +17,7 @@ const Home = () => {
       <h1>Home Page</h1>
       <form onSubmit={handleSubmit}>
         <input
+        accept="image/*"
           type="file"
           onChange={(e) => setFile(URL.createObjectURL(e.target.files[0]))}
         />
