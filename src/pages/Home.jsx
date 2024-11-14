@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <div className='container'>
-      <h1>Home Page</h1>
+      <h1>Template Generator</h1>
       <form onSubmit={handleSubmit}>
         <input
         accept="image/*"
