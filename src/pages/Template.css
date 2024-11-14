@@ -1,0 +1,27 @@
+.box {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+   
+   
+    
+  }
+  
+.template {
+    width: fit-content;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    background-color: white;
+    background-color: black;
+   
+}
+.template p {
+   
+    margin-top: 0;
+    padding: 0.8rem;
+}
+  img {
+    height: 100%;
+    width: 100%;   
+  }
+  
