@@ -6,12 +6,13 @@ import Template from './pages/Template';
 function App() {
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/template" element={<Template />} />
-      </Routes>
-    </Router>
+    // <Router>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/template" element={<Template />} />
+    //   </Routes>
+    // </Router>
+    <Template />
   )
 }
 

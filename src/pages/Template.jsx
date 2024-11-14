@@ -5,14 +5,14 @@ import { saveAs } from 'file-saver';
 import './Template.css';
 
 const Template = () => {
-  const location = useLocation();
-  const { file, text } = location.state || {};
-  const divRef = useRef(null);
  
+ const [file, setFile] = useState(null);
+  const [text, setText] = useState('');
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
   const [fontSize, setFontSize] = useState(16);
   const [fileName, setFileName] = useState('1');
+  const divRef = useRef(null);
 
   const handleHeight = (height) => {
     console.log(height);
@@ -50,47 +50,63 @@ const Template = () => {
 
   return (
     <div className="box">
+      <div className="input-box">
+        <h1>Template Gnerator</h1>
+      <input
+        accept="image/*"
+          type="file"
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter your text"
+        />
+         {file && <div className="props">
+       <div className="form-input">
+             <label htmlFor="">Width </label>
+             <input type="text"  onChange={(e)=> handleWidth(e.target.value)}/>
+     </div>
+     <div className="form-input">
+         <label htmlFor="">Height </label>
+         <input type="text" onChange={(e)=> handleHeight(e.target.value)}/>
+     </div>
+     <div className="form-input">
+         <label htmlFor="">Text Size </label>
+         <input type="number" max="50" value={fontSize} onChange={(e)=> handleFontSize(e.target.value)}/>
+     </div>
+       </div>}
     
-      <div className="inputs">   
-       
-        <div className="form-input">
-                <label htmlFor="">Width: </label>
-                <input type="text" placeholder='Width' onChange={(e)=> handleWidth(e.target.value)}/>
-        </div>
-        <div className="form-input">
-            <label htmlFor="">Height: </label>
-            <input type="text" placeholder='Height' onChange={(e)=> handleHeight(e.target.value)}/>
-        </div>
-        <div className="form-input">
-            <label htmlFor="">Text Size: </label>
-            <input type="number" max="50" value={fontSize} onChange={(e)=> handleFontSize(e.target.value)}/>
-        </div>
-        
-      
-     
       </div>
+    
       
+      {file && (  
      <div className="center">
-     {file && (
+     
+       
+      
         
         <div className="template"  ref={divRef}>
         <img
-           src={file}
+           src={URL.createObjectURL(file)}
            alt="Uploaded"
            style={{
              height,
              width
          }}
+        
          />
-          <p style={{fontSize: fontSize+"px"}}>{text}</p>
+         {text &&  <p style={{fontSize: fontSize+"px"}}>{text}</p>}
        </div>
       
-     )}
+   
     <div className="download">
       <input type="text" placeholder='Enter file name' onChange={(e) => setFileName(e.target.value)}/>
     <button className='button' onClick={handleDownload}>Donwload</button>
     </div>
+  
      </div>
+       )}
     
     </div>
   );
